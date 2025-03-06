@@ -1,0 +1,53 @@
+from flask import render_template, Blueprint, redirect, url_for, flash
+from  .forms import SignupForm, LoginForm
+from flask_login import login_required, current_user, logout_user, login_user
+from .models import User
+from app import database
+
+core = Blueprint('core', __name__)
+
+@core.route('/')
+def index():
+    return render_template('index.html')
+
+@core.route('/signup_page', methods=['GET', 'POST'])
+def signup():
+    signup_form = SignupForm()
+    
+    if signup_form.validate_on_submit():
+        new_user = User(
+            first_name=signup_form.first_name.data,
+            last_name=signup_form.last_name.data,
+            date_of_birth=signup_form.date_of_birth.data,
+            phone_number=signup_form.phone_number.data,
+            email=signup_form.email.data,
+            password=signup_form.password.data
+        )
+        database.session.add(new_user)
+        database.session.commit()
+        flash('Thanks for registering!')
+        return redirect(url_for('core.dashboard'))
+    
+    return render_template('signup_page.html', signup_form=signup_form)
+
+@core.route('/login_page', methods=['GET', 'POST'])
+def login():
+    login_form = LoginForm()
+    
+    if login_form.validate_on_submit():
+        user = User.query.filter_by(email=login_form.email.data).first()
+        
+        if user and user.password == login_form.password.data:
+            login_user(user)
+            flash('Login successful!')
+            return redirect(url_for('core.dashboard'))
+        else:
+            flash('Invalid email or password')
+    
+    return render_template('login_page.html', login_form=login_form)
+
+
+@core.route('/dashboard')
+@login_required
+def dashboard():
+    return render_template('dashboard.html', name=current_user.first_name)

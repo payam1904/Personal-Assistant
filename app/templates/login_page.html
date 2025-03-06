@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+{% block page_title %} Log In {% endblock %}
+
+{% block main_container %}
+<div class="form-frame">
+    <form class="profile-form" method="POST">
+        <h2>Log In</h2>
+
+        {{login_form.email.label(class="form-label")}}
+        {{login_form.email(class="form-input")}}
+
+        {{login_form.password.label(class="form-label")}}
+        {{login_form.password(class="form-input")}}
+
+        {{login_form.submit(class="form-button")}}
+    </form>
+</div>
+
+
+{% endblock %}

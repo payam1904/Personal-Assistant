@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{% block page_title %} Create Account {% endblock %}
+
+{% block main_container %}
+<div class="form-frame">
+    <form class="profile-form" method="POST">
+        <h2>Create Account</h2>
+
+        {{signup_form.hidden_tag()}}
+
+        {{signup_form.first_name.label(class="form-label")}}
+        {{signup_form.first_name(class="form-input")}}
+
+        {{signup_form.last_name.label(class="form-label")}}
+        {{signup_form.last_name(class="form-input")}}
+
+        {{signup_form.date_of_birth.label(class="form-label")}}
+        {{signup_form.date_of_birth(class="form-input")}}
+        <br>
+        {{signup_form.phone_number.label(class="form-label")}}
+        {{signup_form.phone_number(class="form-input")}}
+
+        {{signup_form.email.label(class="form-label")}}
+        {{signup_form.email(class="form-input")}}
+
+        {{signup_form.password.label(class="form-label")}}
+        {{signup_form.password(class="form-input")}}
+
+        {{signup_form.confirm_password.label(class="form-label")}}
+        {{signup_form.confirm_password(class="form-input")}}
+
+        {{signup_form.submit(class="form-button")}}
+    </form>
+</div>
+
+
+{% endblock %}
