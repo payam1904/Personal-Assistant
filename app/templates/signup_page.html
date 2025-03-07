@@ -4,10 +4,10 @@
 
 {% block main_container %}
 <div class="form-frame">
-    <form class="profile-form" method="POST">
-        <h2>Create Account</h2>
-
+    <form class="profile-form" method="POST" action="{{ url_for('core.signup') }}">
         {{signup_form.hidden_tag()}}
+
+        <h2>Create Account</h2>
 
         {{signup_form.first_name.label(class="form-label")}}
         {{signup_form.first_name(class="form-input")}}

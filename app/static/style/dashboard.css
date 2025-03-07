@@ -1,0 +1,140 @@
+#user_image_icon-li {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+
+}
+
+#user_image_icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* background-color: lightgray; */
+
+}
+
+.dashboard-container {
+    /* padding: 40px 0px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* background-color: lightgoldenrodyellow; */
+}
+
+.dashboard-user-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    flex-wrap: wrap;
+    /* background-color: lightcoral; */
+    width: calc(100% - 40px);
+    padding: 20px 20px;
+}
+
+.user-image-box {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* background-color: lightgray; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid lightgray;
+}
+
+.user-image-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.user-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    /* background-color: lightblue; */
+    padding: 20px 0px;
+    border-radius: 10px;
+    width: max-content;
+    background-color: lime;
+}
+
+.user-info-header-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-info-content-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.profile-details-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
+    grid-template-rows: auto;
+    gap: 20px;
+    /* width: 100%; */
+    background-color: lightgreen;
+
+    /* text-wrap: nowrap; */
+    /* background-color: lightyellow; */
+}
+
+.profile-detail {
+    max-width: 300px;
+    white-space: nowrap;
+    background-color: lightcoral;
+}
+
+.profile-details-buttons-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.profile-buttons {
+    max-width: 250px;
+    text-wrap: nowrap;
+    margin: 20px 0px;
+}
+
+.edit-profile-button {
+    background-color: rgb(74, 185, 223);
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.change-password-button {
+    background-color: rgb(74, 185, 223);
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-account-button {
+    background-color: lightcoral;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}

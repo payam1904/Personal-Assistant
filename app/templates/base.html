@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='forms.css') }}">
-    <title>{% block page_title %}Default Title{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/forms.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/dashboard.css') }}">
+    <title>{% block page_title %}My Project{% endblock %}</title>
 
 </head>
 
@@ -16,11 +17,12 @@
             <li>My Project</li>
             <li><a href="{{url_for('core.index')}}">Home</a></li>
         </ul>
-
+        {%block account_links%}
         <ul id="navbar-ul-right">
             <li><a href="{{ url_for('core.login') }}">Login</a></li>
             <li><a href="{{ url_for('core.signup') }}">Create Account</a></li>
         </ul>
+        {%endblock%}
     </nav>
 
     <!-- Flash messages block -->
@@ -35,13 +37,18 @@
     {% endwith %}
 
     <section id="main-container">
+        {% block main_container %}
         Main Container Test
+        {% endblock %}
     </section>
 
 
     <footer>
         <div>Copyright Resered</div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='javascript/index.js') }}"></script>
 </body>
 
 </html>

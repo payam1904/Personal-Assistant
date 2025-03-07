@@ -33,21 +33,24 @@ def signup():
 @core.route('/login_page', methods=['GET', 'POST'])
 def login():
     login_form = LoginForm()
-    
     if login_form.validate_on_submit():
         user = User.query.filter_by(email=login_form.email.data).first()
-        
         if user and user.password == login_form.password.data:
             login_user(user)
-            flash('Login successful!')
+            flash('Login successful!', 'success')
             return redirect(url_for('core.dashboard'))
         else:
-            flash('Invalid email or password')
-    
+            flash('Invalid email or password', 'error')
     return render_template('login_page.html', login_form=login_form)
 
 
 @core.route('/dashboard')
 @login_required
 def dashboard():
-    return render_template('dashboard.html', name=current_user.first_name)
+    return render_template('dashboard.html', current_user=current_user)
+
+@core.route('/logedout')
+def logout():
+    flash('You have been logged out')
+    logout_user()
+    return render_template('index.html')

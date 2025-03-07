@@ -4,7 +4,9 @@
 
 {% block main_container %}
 <div class="form-frame">
-    <form class="profile-form" method="POST">
+    <form class="profile-form" method="POST" action="{{ url_for('core.login') }}">
+        {{ login_form.hidden_tag() }}
+
         <h2>Log In</h2>
 
         {{login_form.email.label(class="form-label")}}
