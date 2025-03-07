@@ -8,4 +8,18 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 2000);
         });
     }
+
+    // Calculate the maximum width of feature-body-content elements
+    const featureBodies = document.querySelectorAll('.feature-body-content');
+    let maxWidth = 0;
+    featureBodies.forEach(function (element) {
+        const elementWidth = element.offsetWidth;
+        if (elementWidth > maxWidth) {
+            maxWidth = elementWidth;
+        }
+    });
+
+    featureBodies.forEach(function (element) {
+        element.style.width = maxWidth + 'px';
+    });
 });

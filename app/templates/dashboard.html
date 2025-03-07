@@ -16,7 +16,7 @@
 
 
 <!-- ==================== Main Container ================-->
-{% block main_container %}
+{% block header_container %}
 <section class="main-container dashboard-container">
 
     <section class="dashboard-user-section">
@@ -29,7 +29,7 @@
                 <h1>Welcome, {{ current_user.first_name }}</h1>
                 <p>Last login info</p>
             </div>
-            <hr id="dashboard-header-hr">
+            <hr class="dashboard-header-hr">
 
             <div class="info-box-content-box">
                 <div class="profile-details-container">
@@ -50,34 +50,134 @@
         </div>
 
     </section>
-
-
-
-
-
-
-
-
-
-
-    <section class="all-tools-section">
-        <div class="dashboard-tools">
-            <div class="dashboard-tool">
-                <h2>Tool 1</h2>
-                <p>Description of tool 1.</p>
-            </div>
-            <div class="dashboard-tool">
-                <h2>Tool 2</h2>
-                <p>Description of tool 2.</p>
-            </div>
-            <div class="dashboard-tool">
-                <h2>Tool 3</h2>
-                <p>Description of tool 3.</p>
-            </div>
-        </div>
-
-
-    </section>
 </section>
 
 {%endblock%}
+
+{% block main_container %}
+<section class="dashboard-container">
+
+    <section class="main-container features-section">
+
+        <!-- FEATURE 1 - BUSINESS -->
+        <div class="features-container">
+
+            <div class="feature-header">
+                <!-- flex row -->
+                <h2>Business</h2>
+                <p>Tools to manage your business</p>
+            </div>
+            <hr class="dashboard-header-hr">
+
+            <div class="feature-body">
+                <!-- inline block or flex row -->
+
+                <div class="feature-body-content">
+                    <!-- flex row -->
+                    <img src="#">
+                    <p>Calculate your VAT</p>
+                </div>
+                <div class="feature-body-content">
+                    <!-- flex row -->
+                    <img src="#">
+                    <p>Issue Invoice</p>
+                </div>
+                <div class="feature-body-content">
+                    <!-- flex row -->
+                    <img src="#">
+                    <p>Self Assessment History</p>
+                </div>
+                <div class="feature-body-content">
+                    <!-- flex row -->
+                    <img src="#">
+                    <p>Your Scheduel</p>
+                </div>
+                <div class="feature-body-content">
+                    <!-- flex row -->
+                    <img src="#">
+                    <p>Your Payslips</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FEATURE 2 - EXTRA -->
+        <div class="features-container">
+
+            <div class="feature-header">
+                <!-- flex row -->
+                <h2>ُOther tools</h2>
+                <p>Need a handy tool? you can find it hear.</p>
+            </div>
+            <hr class="dashboard-header-hr">
+
+            <div class="feature-body">
+                <!-- inline block or flex row -->
+
+                <div class="feature-body-content">
+                    <!-- flex row -->
+                    <img src="#">
+                    <p>Unit Converter</p>
+                </div>
+                <div class="feature-body-content">
+                    <!-- flex row -->
+                    <img src="#">
+                    <p>Currency Converter</p>
+                </div>
+                <div class="feature-body-content">
+                    <!-- flex row -->
+                    <img src="#">
+                    <p>Calculator</p>
+                </div>
+                <div class="feature-body-content">
+                    <!-- flex row -->
+                    <img src="#">
+                    <p>Stock Price Tracking</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FEATURE 3 - INFORMATION -->
+        <div class="features-container">
+
+            <div class="feature-header">
+                <!-- flex row -->
+                <h2>Information</h2>
+                <p>Here you can find information about HMRC, UTR, VAT Calculation and etc.</p>
+            </div>
+            <hr class="dashboard-header-hr">
+
+            <div class="feature-body">
+                <!-- inline block or flex row -->
+
+                <div class="feature-body-content">
+                    <!-- flex row -->
+                    <img src="#">
+                    <p>Universal Credit</p>
+                </div>
+                <div class="feature-body-content">
+                    <!-- flex row -->
+                    <img src="#">
+                    <p>HMRC</p>
+                </div>
+                <div class="feature-body-content">
+                    <!-- flex row -->
+                    <img src="#">
+                    <p>Driving Licence </p>
+                </div>
+                <div class="feature-body-content">
+                    <!-- flex row -->
+                    <img src="#">
+                    <p>Self Employment</p>
+                </div>
+                <div class="feature-body-content">
+                    <!-- flex row -->
+                    <img src="#">
+                    <p>Self Assessment</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</section>
+{% endblock %}

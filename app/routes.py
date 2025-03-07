@@ -51,6 +51,7 @@ def dashboard():
 
 @core.route('/logedout')
 def logout():
-    flash('You have been logged out')
+    flash('You have been logged out', "info")
     logout_user()
+    
     return render_template('index.html')

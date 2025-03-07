@@ -74,9 +74,16 @@ footer {
 .flash.success {
     background-color: #d4edda;
     color: #155724;
+    border: 1px solid #155724;
 }
 
 .flash.error {
     background-color: #f8d7da;
     color: #721c24;
+}
+
+.flash.info {
+    background-color: #f0e4a4;
+    color: #be4600;
+
 }
