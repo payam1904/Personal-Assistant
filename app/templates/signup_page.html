@@ -9,28 +9,45 @@
 
         <h2>Create Account</h2>
 
-        {{signup_form.first_name.label(class="form-label")}}
-        {{signup_form.first_name(class="form-input")}}
+        {{signup_form.first_name.label(class="form-label", id="first_name-label")}}
+        {{signup_form.first_name(class="form-input", id="first_name-input")}}
 
-        {{signup_form.last_name.label(class="form-label")}}
-        {{signup_form.last_name(class="form-input")}}
+        {{signup_form.last_name.label(class="form-label", id="last_name-label")}}
+        {{signup_form.last_name(class="form-input", id="last_name-input")}}
 
-        {{signup_form.date_of_birth.label(class="form-label")}}
-        {{signup_form.date_of_birth(class="form-input")}}
+        {{signup_form.date_of_birth.label(class="form-label", id="date_of_birth-label")}}
+        {{signup_form.date_of_birth(class="form-input", id="date_of_birth-input")}}
         <br>
-        {{signup_form.phone_number.label(class="form-label")}}
-        {{signup_form.phone_number(class="form-input")}}
+        {{signup_form.phone_number.label(class="form-label", id="phone_number-label")}}
+        {{signup_form.phone_number(class="form-input", id="phone_number-input")}}
 
-        {{signup_form.email.label(class="form-label")}}
-        {{signup_form.email(class="form-input")}}
+        {{signup_form.email.label(class="form-label", id="email-label")}}
+        {{signup_form.email(class="form-input", id="email-input")}}
 
-        {{signup_form.password.label(class="form-label")}}
-        {{signup_form.password(class="form-input")}}
+        {{signup_form.password.label(class="form-label", id="password-label")}}
+        {{signup_form.password(class="form-input", id="password-input")}}
 
-        {{signup_form.confirm_password.label(class="form-label")}}
-        {{signup_form.confirm_password(class="form-input")}}
+        {{signup_form.confirm_password.label(class="form-label", id="confirm_password-label")}}
+        {{signup_form.confirm_password(class="form-input", id="confirm_password-input")}}
 
-        {{signup_form.submit(class="form-button")}}
+        <div id="password-confirmation-match">
+            <ul>
+                <li id="password-confirmation-match">Your passwords do not match</li>
+            </ul>
+        </div>
+
+        <div id="password-validation-list">
+            <ul>
+                <li id="password-validation-list-item-1">At least 8 characters long</li>
+                <li id="password-validation-list-item-2">Contain at least one uppercase letter</li>
+                <li id="password-validation-list-item-3">Contain at least one lowercase letter</li>
+                <li id="password-validation-list-item-4">Contain at least one number</li>
+                <li id="password-validation-list-item-5">Contain at least one special character</li>
+            </ul>
+        </div>
+
+
+        {{signup_form.submit(class="form-button", id="registeration-submit-button")}}
     </form>
 </div>
 

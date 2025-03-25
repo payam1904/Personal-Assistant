@@ -16,13 +16,15 @@ body {
     min-width: 600px;
 }
 
-nav {
-    background-color: rgb(60, 60, 60);
+#navbar {
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: nowrap;
     padding: 0px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }
 
 nav ul {
@@ -37,12 +39,12 @@ nav ul {
 
 
 #navbar li {
-    color: rgb(204, 0, 255);
+    color: rgb(115, 136, 255);
 }
 
 #navbar li a {
     text-decoration: none;
-    color: whitesmoke;
+    color: rgb(82, 82, 82);
 }
 
 #main-container {
@@ -85,5 +87,59 @@ footer {
 .flash.info {
     background-color: #f0e4a4;
     color: #be4600;
+
+}
+
+.error {
+    border: 2px solid red;
+    background-color: #f8d7da;
+}
+
+
+
+/* Reset the list style and spacing for the password validation list */
+#password-validation-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style each list item with left padding for the icon */
+#password-validation-list li {
+    position: relative;
+    padding-left: 25px;
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+/* Add a red cross icon before each item by default */
+#password-validation-list li::before {
+    content: '✖';
+    color: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* When the criteria is met, add the "valid" class to the list item and show a green tick */
+#password-validation-list li.valid::before {
+    content: '✔';
+    color: green;
+}
+
+/* #password-confirmation-match {
+    list-style: none;
+} */
+
+#password-confirmation-match ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.password-match-error {
+    color: red;
+    font-size: 16px;
+    margin-bottom: 1rem;
 
 }

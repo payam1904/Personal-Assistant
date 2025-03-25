@@ -173,10 +173,7 @@
         align-items: center;
         gap: 20px;
     }
-
-
 }
-
 
 .edit-profile-button {
     background-color: rgb(74, 185, 223);
@@ -201,5 +198,3 @@
     border: none;
     cursor: pointer;
 }
-
-/* ===================== MAIN CONTAINER */

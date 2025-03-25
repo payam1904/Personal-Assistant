@@ -1,9 +1,30 @@
+<!DOCTYPE html>
 {% extends 'base.html'%}
 
 {% block page_title %} My Project {% endblock %}
 
 {% block header_container %}
-Header Container Test - INDEX
+
+<section class="main-header-container">
+<h1>WELCOME to Personal Assistant Project</h1>
+<p class="mp-header-description">
+    This is a personal assistant project that helps you manage your tasks and schedule efficiently. 
+    It is designed to be user-friendly and intuitive, making it easy for you to stay organized and productive.    
+</p>
+<button class="mp-primary-button">Click Me</button>
+<div class="mp-features-container">
+    <div class="mp-feature">
+        <img src="{{url_for('static', filename='assets/icons/financing.jpeg')}}" alt="Feature 1">
+    </div>
+    <div class="mp-feature">
+        <img src="{{url_for('static', filename='assets/icons/personal-management.jpeg')}}" alt="Feature 2">
+    </div>
+    <div class="mp-feature">
+        <img src="{{url_for('static', filename='assets/icons/learning.jpeg')}}" alt="Feature 3">
+    </div>
+</div>
+</section>
+
 {% endblock %}
 
 {% block main_container %}

@@ -15,6 +15,16 @@ def signup():
     signup_form = SignupForm()
     
     if signup_form.validate_on_submit():
+        user = User.query.filter_by(email=signup_form.email.data).first()
+        # username = User.query.filter_by(username=signup_form.username.data).first()
+        if user:
+            flash('This email address has already been registered!', 'error')
+            return redirect(url_for('core.signup'))
+        # elif username:
+        #     flash('This username is taken!, Try another one!')
+        #     return redirect(url_for('core.signup'))
+
+        
         new_user = User(
             first_name=signup_form.first_name.data,
             last_name=signup_form.last_name.data,
@@ -27,7 +37,8 @@ def signup():
         database.session.commit()
         flash('Thanks for registering!')
         return redirect(url_for('core.dashboard'))
-    
+    elif signup_form.errors:
+        flash('There are errors in your form. Please double check!', 'error')
     return render_template('signup_page.html', signup_form=signup_form)
 
 @core.route('/login_page', methods=['GET', 'POST'])
