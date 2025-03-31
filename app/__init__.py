@@ -5,6 +5,7 @@ from flask_login import LoginManager
 from config import Config
 from flask_wtf.csrf import CSRFProtect
 
+
 database = SQLAlchemy()
 login_manager = LoginManager()
 

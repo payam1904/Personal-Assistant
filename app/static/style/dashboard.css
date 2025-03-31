@@ -35,7 +35,7 @@
     align-items: center;
     gap: 70px;
     flex-wrap: wrap;
-    background-color: rgba(0, 0, 0, 0.1);
+    background: linear-gradient( #e4e4e4, white , #e4e4e4 );
 
     width: calc(100% - 40px);
     padding: 20px 20px;
