@@ -177,4 +177,15 @@ document.addEventListener('DOMContentLoaded', function () {
     if (confirmPasswordField) {
         confirmPasswordField.addEventListener('input', validatePasswordMatch);
     }
+
+    // Flash message control with slide down and slide up
+    const flashMessages = document.querySelectorAll('.flash');
+    flashMessages.forEach(flashMessage => {
+        flashMessage.style.display = 'none'; 
+        $(flashMessage).slideDown(500);
+        setTimeout(() => {
+            $(flashMessage).slideUp(500, () => flashMessage.remove());
+        }, 3000);
+    });
+    // End of flash message control
 });
