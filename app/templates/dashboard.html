@@ -40,8 +40,8 @@
                 </div>
 
                 <div class="profile-details-buttons-box">
-                    <button class="form-button edit-profile-button profile-buttons">Edit Profile</button>
-                    <button class="form-button change-password-button profile-buttons">Change Password</button>
+                    <button class="form-button edit-profile-button profile-buttons" onclick="window.location.href='{{ url_for('core.update_profile') }}'">Edit Profile</button>
+                    <button class="form-button change-password-button profile-buttons" onclick="window.location.href='{{ url_for('core.update_password') }}'">Change Password</button>
                     <button class="form-button delete-account-button profile-buttons">Delete Account</button>
                 </div>
             </div>

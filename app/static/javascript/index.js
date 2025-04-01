@@ -17,17 +17,46 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const featureBodies = document.querySelectorAll('.feature-body-content');
-    let maxWidth = 0;
-    featureBodies.forEach(function (element) {
-        const elementWidth = element.offsetWidth;
-        if (elementWidth > maxWidth) {
-            maxWidth = elementWidth;
-        }
-    });
-    featureBodies.forEach(function (element) {
-        element.style.width = maxWidth + 'px';
-    });
 
+    function adjustWidths() {
+        let maxWidth = 0;
+    
+        if (window.innerWidth >= 900) {
+            featureBodies.forEach(function (element) {
+                const elementWidth = element.offsetWidth;
+                if (elementWidth > maxWidth) {
+                    maxWidth = elementWidth;
+                }
+            });
+    
+            featureBodies.forEach(function (element) {
+                element.style.width = maxWidth + 'px';
+            });
+        } else if (window.innerWidth < 900 && window.innerWidth >= 600) {
+            featureBodies.forEach(function (element) {
+                element.style.width = 'fit-content' in document.body.style ? 'fit-content' : 'auto';
+            });
+        } else {
+            // Reset width for screens smaller than 600px
+            featureBodies.forEach(function (element) {
+                element.style.width = '100%'; // Removes inline style to allow CSS to take over
+            });
+        }
+    }
+    
+    adjustWidths();
+    window.addEventListener('resize', adjustWidths);
+    
+    // featureBodies.forEach(function (element) {
+    //     const elementWidth = element.offsetWidth;
+    //     if (elementWidth > maxWidth) {
+    //         maxWidth = elementWidth;
+    //     }
+    // });
+    // featureBodies.forEach(function (element) {
+    //     element.style.width = maxWidth + 'px';
+    // });
+    
     const validNamePattern = /^[a-zA-Z\s]+$/;
     const validPhonePattern = /^(\+|0)\d{6,14}$/;
     const validEmailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

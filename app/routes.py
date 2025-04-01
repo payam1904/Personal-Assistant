@@ -66,3 +66,8 @@ def logout():
     logout_user()
     
     return render_template('index.html')
+
+@core.route('/update-profile')
+@login_required
+def update_profile():
+    return render_template('update_profile.html', current_user=current_user)
